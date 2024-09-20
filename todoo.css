@@ -1,0 +1,97 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #81b29a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.container{
+   height: 65vh;
+   width: 60vw;
+   background-color: white;
+   border-radius: 15px;
+   border-bottom-left-radius: 0px;
+   border-bottom-right-radius: 0px;
+   padding-inline: 20px;
+   overflow: auto;
+   position: relative;
+   
+}
+.header{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+h1{
+    color: #3498db;  
+    padding: 5px; 
+}
+#item{
+    position: sticky;
+    width: 100%;
+    height: 42px;
+    border-radius: 8px;
+    padding: 10px;
+    border: 2.5px solid #3498db;
+    border-top: 1px solid #3498db;
+    border-right: 1px solid #3498db;
+    outline: none;
+}
+.todobox{
+    list-style: none;
+    position: relative;
+}
+.todobox li{
+    position: relative;
+    background-color: #3498db;
+    border-radius: 8px;
+    margin-top: 15px;
+    padding: 10px;  
+    text-align: justify;
+}
+.todobox li i{
+    color: aliceblue;
+    position: absolute;
+    right: 5px;
+    top: 10px;   
+}
+.footer{
+    background-color: white;
+    position: sticky;
+    height: 40px;
+    width: 60vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    top: 572px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    
+}
+button{
+    height: 30px;
+    width: 55px;
+    background-color: #3498db;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    color: rgb(0, 0, 0);
+}
+button:active{
+    scale: 0.9;
+    transition: linear 0.05s;
+}
+button:hover{
+    background-color:#8bc9f2;
+    backdrop-filter: opacity(5%);
+}
