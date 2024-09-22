@@ -7,7 +7,17 @@ item.addEventListener("keyup", (evt) => {
     item.value = "";
   }
 });
+const saveData = () => {
+  const lists = document.querySelectorAll("li");
+  const data = [];
 
+  lists.forEach((list) => {
+    data.push(list.innerText);
+  });
+  
+  localStorage.setItem("Lists",JSON.stringify(data));
+  
+};
 const addToDo = (item) => {
   const listItem = document.createElement("li");
 
@@ -22,9 +32,23 @@ const addToDo = (item) => {
   remove.addEventListener("click", (evt) => {
     toDOBox.removeChild(listItem);
   });
-};
-const reset = () =>{
+  const resetbtn = document.querySelector(".reset");
   resetbtn.addEventListener("click", (evt) => {
-    toDOBox.innerHTML=""
+    toDOBox.innerHTML = "";
+    localStorage.setItem("Lists",JSON.stringify(''));
   });
-}
+  
+};
+document.querySelector(".save").addEventListener("click", (evt) => {
+  saveData();
+});
+
+(
+  function () {
+    const lsLists =JSON.parse(localStorage.getItem("Lists"));
+    lsLists.forEach(list => {
+      addToDo(list)
+    });
+    
+  }
+)()
